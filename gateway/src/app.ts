@@ -1,5 +1,5 @@
-import express from "express";
-import dotenv from "dotenv";
+import express from 'express';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -7,11 +7,11 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/health", (req, res) => {
+app.get('/health', (req, res) => {
     res.status(200).send({
-        status: "OK",
-        service: "gateway",
-        timestamp: new Date().toISOString()
+        status: 'OK',
+        service: 'gateway',
+        timestamp: new Date().toISOString(),
     });
 });
 
