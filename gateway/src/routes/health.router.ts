@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.status(200).send({
         status: 'OK',
         service: 'gateway',
-        timestamp: new Date().toISOString,
+        timestamp: new Date().toISOString(),
     });
 });
 

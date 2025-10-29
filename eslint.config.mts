@@ -24,4 +24,9 @@ export default [
     {
         ignores: ['dist/**', 'eslint.config.mts'],
     },
+    {
+        rules: {
+            '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+        },
+    },
 ];
