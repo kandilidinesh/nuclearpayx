@@ -1,12 +1,11 @@
-// @ts-nocheck
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-plugin-prettier';
 
-export default defineConfig([
-    //JS Config
+export default [
+    js.configs.recommended,
+    ...tseslint.configs.recommended,
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         languageOptions: {
@@ -18,13 +17,11 @@ export default defineConfig([
             prettier,
         },
         rules: {
-            ...js.configs.recommended.rules,
             'prettier/prettier': ['error', { singleQuote: true, semi: true }],
+            'no-console': 'off',
         },
     },
-    //TS Config
     {
-        files: ['src/**/*.ts'],
-        ...tseslint.configs.recommended,
+        ignores: ['dist/**', 'eslint.config.mts'],
     },
-]);
+];
