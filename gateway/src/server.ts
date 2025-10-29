@@ -1,7 +1,8 @@
 import app from './app';
+import logger from './utils/logger';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-    console.log(`NuclearPayX Gateway running on port ${PORT}...`);
+    logger.info(`NuclearPayX Gateway running on port ${PORT}...`);
 });
